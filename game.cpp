@@ -4,11 +4,8 @@
 #include <conio.h>
 #include <windows.h>
 
-
 namespace Tmpl8
 {
-	Sprite beeSprite(new Surface("assets/beasset.png"), 1);
-
 	// -----------------------------------------------------------
 	// Initialize the application
 	// -----------------------------------------------------------
@@ -16,9 +13,12 @@ namespace Tmpl8
 	{
 		bee.setPosition(200, 200);
 
-		initializeFlowers(flowers);  // Initialize the flowers
-		initializeObstacles(obstacles);  // Initialize the obstacles
+		//int randomX = rand() % screenWidth;
+		//int randomY = rand() % screenHeight;
 
+
+		//flower.setPosX();
+		//flower.setPosY();
 
 	}
 
@@ -71,57 +71,22 @@ namespace Tmpl8
 			directionY = 1;
 		}
 
-		if (GetAsyncKeyState('Z'))
-		{
-			bee.moveSpeed = 8;
-		}
-
-		if (GetAsyncKeyState('X'))
-		{
-			bee.moveSpeed = 2;
-		}
-
-		if (GetAsyncKeyState('R'))
-		{
-			bee.setPosition(200, 200);
-		}
-
-		if (GetAsyncKeyState('W'))
-		{
-			int newHeight = bee.getHeight();
-			int targetHeight = 500;
-			if (newHeight < targetHeight)
-			{
-				newHeight = newHeight + 1;
-				bee.setHeight(newHeight);
-
-			}
-		}
-
-		if (GetAsyncKeyState('S'))
-		{
-			int newWidth = bee.getWidth();
-			int targetWidth = 500;
-			if (newWidth < targetWidth)
-			{
-				 newWidth = newWidth + 1;
-				bee.setWidth(newWidth);
-
-			}
-		}
-
-
-		// [-1 ; 1]
+		//move
+		/// int dirX -> 1, 0, -1,
+		/// int dirY -> 1, 0, -1,
+		/// int screenHeight -> 512 ,
+		/// int screenWidth -> 800,
 	   // Move the bee with the adjusted position P.S. MAKE SURE TO ADD EVERY NEW THING YOU INCLUDE IN THE "BEE.H" HERE OTHERWISE THE CODE WON'T WORK
 		bee.move(directionX, directionY, screen->GetHeight(), screen->GetWidth());
 
 		bee.draw(screen);
 
-		// move this lower thing into bee.draw()
-		// Make width and height customizable
+		//flower.spawn();
+		flower.SpawnRandomly(screen->GetWidth(), screen->GetHeight());
 
+		flower.draw(screen);
 		// Collect flowers and calculate score
-		score += collectFlowers(bee, flowers, collectedRegularFlowers, collectedRareFlowers, collectedVeryRareFlowers);
+		//score += collectFlowers(bee, flowers, collectedRegularFlowers, collectedRareFlowers, collectedVeryRareFlowers);
 
 	}
 

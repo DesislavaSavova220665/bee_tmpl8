@@ -2,6 +2,7 @@
 
 #include "Bee.h"
 #include "surface.h"
+#include "flower.h"
 
 namespace Tmpl8 {
 
@@ -23,11 +24,9 @@ public:
 private:
 	Surface* screen;
 
-	// Initialize the Bee at starting position (0, 0)
+	// Initialize the Bee and flowers at starting position (0, 0)
 	Bee bee;
-
-	Point flowers[NUM_FLOWERS];  // Array of flowers on the grid
-	Point obstacles[NUM_OBSTACLES];  // Array of obstacles on the grid
+	Flower flower;
 
 	int collectedRegularFlowers = 0;
 	int collectedRareFlowers = 0;
