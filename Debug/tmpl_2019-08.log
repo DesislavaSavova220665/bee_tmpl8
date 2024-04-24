@@ -1,0 +1,10 @@
+﻿  game.cpp
+D:\New D-Repo\tmpl8\Bee.h(64,4): warning C4002: too many arguments for function-like macro invocation 'assert'
+D:\New D-Repo\tmpl8\Bee.h(76,4): warning C4002: too many arguments for function-like macro invocation 'assert'
+D:\New D-Repo\tmpl8\Bee.h(92,23): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\New D-Repo\tmpl8\Bee.h(94,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\New D-Repo\tmpl8\Bee.h(95,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\New D-Repo\tmpl8\Bee.h(103,23): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\New D-Repo\tmpl8\Bee.h(105,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\New D-Repo\tmpl8\Bee.h(106,33): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  tmpl_2019-08.vcxproj -> D:\New D-Repo\tmpl8\tmpl_2019-08_x64_debug.exe
