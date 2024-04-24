@@ -89,7 +89,7 @@ namespace Tmpl8
 		if (GetAsyncKeyState('W'))
 		{
 			int newHeight = bee.getHeight();
-			int targetHeight = 300;
+			int targetHeight = 500;
 			if (newHeight < targetHeight)
 			{
 				newHeight = newHeight + 1;
@@ -101,7 +101,7 @@ namespace Tmpl8
 		if (GetAsyncKeyState('S'))
 		{
 			int newWidth = bee.getWidth();
-			int targetWidth = 300;
+			int targetWidth = 500;
 			if (newWidth < targetWidth)
 			{
 				 newWidth = newWidth + 1;
