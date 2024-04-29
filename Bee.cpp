@@ -16,7 +16,7 @@ namespace Tmpl8
 	void Bee::move(int dirX, int dirY, int screenHeight, int screenWidth)
 	{
 
-		// Define the bee's current position
+		// Defining the bee's current position
 		float beeX = position.x;
 		float beeY = position.y;
 

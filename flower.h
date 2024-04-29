@@ -25,6 +25,8 @@ namespace Tmpl8
 
 		void SpawnRandomly(int screenWidth, int screenHeight);
 
+		void interactWithBee(const Bee& bee, int screenWidth, int screenHeight);
+
 		//Method to draw the flower
 		void draw(Surface* screen);
 
@@ -52,10 +54,6 @@ namespace Tmpl8
 		int m_width;
 		bool visible;
 		Sprite* flowerSprite;
-
-
-
 	};
-	//Method to draw the bee
 	//void flower::draw(Surface* screen);
 }
