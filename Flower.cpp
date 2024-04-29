@@ -46,24 +46,25 @@ namespace Tmpl8
             float newRandomX = static_cast<float>(rand() % screenWidth);
             float newRandomY = static_cast<float>(rand() % screenHeight);
 
-            // Manually enforce bounds checking for x and y coordinates
+            // Manually enforce screen bounds by ensuring new flower coordinates remain within the screen
+            // For x-coordinate
             if (newRandomX < 0) {
                 newRandomX = 0;
             }
-            else if (newRandomX > screenWidth) {
-                newRandomX = static_cast<float>(screenWidth);
+            else if (newRandomX > screenWidth - m_width) {
+                newRandomX = screenWidth - m_width; // Ensure x doesn't go off the right side
             }
 
+            // For y-coordinate
             if (newRandomY < 0) {
                 newRandomY = 0;
             }
-            else if (newRandomY > screenHeight) {
-                newRandomY = static_cast<float>(screenHeight);
+            else if (newRandomY > screenHeight - m_height) {
+                newRandomY = screenHeight - m_height; // Ensure y doesn't go off the bottom side
             }
 
-            // Set the flower's position to the calculated random coordinates
-            position.x = newRandomX;
-            position.y = newRandomY;
+            // Set the flower's position to the new random coordinates within the screen bounds
+            setPosition(newRandomX, newRandomY);
         }
     }
 }
