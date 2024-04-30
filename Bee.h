@@ -73,7 +73,5 @@ namespace Tmpl8
 		Sprite* beeSprite;
 		int height;
 		int width;
-		
-		
 	};
 }

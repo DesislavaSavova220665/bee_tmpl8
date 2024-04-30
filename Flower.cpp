@@ -1,6 +1,8 @@
 #include "flower.h"
 #include "Bee.h"
 #include "cmath"
+
+
 namespace Tmpl8
 {
 
@@ -32,7 +34,7 @@ namespace Tmpl8
 	}
 
     void Flower::interactWithBee(const Bee& bee, int screenWidth, int screenHeight) {
-        // Calculate the distance between the bee and the flower
+        // distance between bee and flower
         float dx = bee.getPosition().x - position.x;
         float dy = bee.getPosition().y - position.y;
         float distance = std::sqrt(dx * dx + dy * dy);
@@ -46,16 +48,14 @@ namespace Tmpl8
             float newRandomX = static_cast<float>(rand() % screenWidth);
             float newRandomY = static_cast<float>(rand() % screenHeight);
 
-            // Manually enforce screen bounds by ensuring new flower coordinates remain within the screen
-            // For x-coordinate
+            // Manually enforcing screen bounds by ensuring new flower coordinates remain within the screen
             if (newRandomX < 0) {
                 newRandomX = 0;
-            }
+            } 
             else if (newRandomX > screenWidth - m_width) {
-                newRandomX = screenWidth - m_width; // Ensure x doesn't go off the right side
+                newRandomX = screenWidth - m_width; 
             }
 
-            // For y-coordinate
             if (newRandomY < 0) {
                 newRandomY = 0;
             }

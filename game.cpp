@@ -1,5 +1,6 @@
 #include "game.h"
 #include "surface.h"
+#include "timer.h"
 
 #include <conio.h>
 #include <windows.h>
@@ -13,14 +14,8 @@ namespace Tmpl8
 	{
 		bee.setPosition(200, 200);
 		flower.SpawnRandomly(screen->GetWidth(), screen->GetHeight());
-
-		//int randomX = rand() % screenWidth;
-		//int randomY = rand() % screenHeight;
-
-
-		//flower.setPosX();
-		//flower.setPosY();
-
+		Timer myTimer(60.0f);
+		myTimer.start();
 	}
 
 	// -----------------------------------------------------------
@@ -69,16 +64,20 @@ namespace Tmpl8
 			directionY = 1;
 		}
 
-		//move
-		/// int dirX -> 1, 0, -1,
-		/// int dirY -> 1, 0, -1,
-		/// int screenHeight -> 512 ,
-		/// int screenWidth -> 800,
+		if (timer.hasExpired()) {
+			// Handle game over scenario when the timer has run out
+			std::cout << "Time's up! Game Over!" << std::endl;
+
+			exit(0); // This will terminate the program; you can use other actions such as stopping the loop
+			return;
+		}
+
 	   // Move the bee with the adjusted position P.S. MAKE SURE TO ADD EVERY NEW THING YOU INCLUDE IN THE "BEE.H" HERE OTHERWISE THE CODE WON'T WORK
 		bee.move(directionX, directionY, screen->GetHeight(), screen->GetWidth());
 		flower.interactWithBee(bee, screen->GetWidth(), screen->GetHeight());
 		bee.draw(screen);
 		flower.draw(screen);
+
 		// Collect flowers and calculate score
 		//score += collectFlowers(bee, flowers, collectedRegularFlowers, collectedRareFlowers, collectedVeryRareFlowers);
 

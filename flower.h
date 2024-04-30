@@ -8,13 +8,12 @@ namespace Tmpl8
 {
 	const int NUM_FLOWERS = 5;
 	const int NUM_OBSTACLES = 3;
-	const int TIME_LIMIT = 30;  // Time limit in seconds
+	const int TIME_LIMIT = 15;  // Time limit in seconds
 
 	// Flower types and their corresponding point values
 	enum FlowerType {
-		REGULAR_FLOWER = 1,
-		RARE_FLOWER = 2,
-		VERY_RARE_FLOWER = 3
+		REGULAR_FLOWER = 3,
+		RARE_FLOWER = 2
 	};
 
 	class Flower

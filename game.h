@@ -3,6 +3,7 @@
 #include "Bee.h"
 #include "surface.h"
 #include "flower.h"
+#include "timer.h"
 
 namespace Tmpl8 {
 
@@ -27,6 +28,7 @@ private:
 	// Initialize the Bee and flowers at starting position (0, 0)
 	Bee bee;
 	Flower flower;
+	Timer timer;
 
 	int collectedRegularFlowers = 0;
 	int collectedRareFlowers = 0;
