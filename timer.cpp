@@ -2,13 +2,17 @@
 
 namespace Tmpl8 {
 
-	Timer::Timer(float durationInSeconds): duration(durationInSeconds), startTime(std::chrono::steady_clock::now())
+    Timer::Timer()
     {
-        // Initialize the start time to the current time
+	    
     }
 
-    void Timer::start()
+    void Timer::start(float durationInSeconds)
     {
+        duration = durationInSeconds;
+
+
+
         startTime = std::chrono::steady_clock::now();
     }
 

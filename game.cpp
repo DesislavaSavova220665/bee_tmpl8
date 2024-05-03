@@ -3,6 +3,7 @@
 #include "timer.h"
 
 #include <conio.h>
+#include <string>
 #include <windows.h>
 
 namespace Tmpl8
@@ -14,8 +15,7 @@ namespace Tmpl8
 	{
 		bee.setPosition(200, 200);
 		flower.SpawnRandomly(screen->GetWidth(), screen->GetHeight());
-		Timer myTimer(60.0f);
-		myTimer.start();
+		timer.start(2.0f);
 	}
 
 	// -----------------------------------------------------------
@@ -64,11 +64,14 @@ namespace Tmpl8
 			directionY = 1;
 		}
 
+		auto t = std::to_string(timer.getRemainingTime());
+
+		screen->Print((char*)t.c_str(), 720, 15, 0x00ff0000);
+		//screen->Print((char*)t.c_str(), 0,0, 0x00ffffff);
 		if (timer.hasExpired()) {
 			// Handle game over scenario when the timer has run out
-			std::cout << "Time's up! Game Over!" << std::endl;
-
-			exit(0); // This will terminate the program; you can use other actions such as stopping the loop
+			screen->Print("Time's up! Game Over!", screen->GetWidth() / 2 -50, screen->GetHeight() / 2, 0x00ff0000);
+			 // This will terminate the program; you can use other actions such as stopping the loop
 			return;
 		}
 

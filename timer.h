@@ -10,11 +10,8 @@ namespace Tmpl8 {
 
         Timer();
 
-        // Constructor to initialize the timer with a specific duration (in seconds)
-        Timer(float durationInSeconds);
-
         // Method to start the timer
-        void start();
+        void start(float durationInSeconds);
 
         // Method to check if the timer has expired
         bool hasExpired() const;
