@@ -77,8 +77,10 @@ namespace Tmpl8
 
 
 		// Drawing text
-		screen->Print((char*)remainingTime.c_str(), 20, 30, 0x00ff0000);
-		screen->Print((char*)addedScore.c_str(), 20, 70, 0x00ffffff);
+		screen->Print("Remaining Time:", 20, 20, 0);
+		screen->Print("SCORE:", 20, 30, 0);
+		screen->Print((char*)remainingTime.c_str(), 115, 20, 0x00ff0000);
+		screen->Print((char*)addedScore.c_str(), 60, 30, 0x00ffffff);
 
 		// Logic
 		// Move the bee with the adjusted position P.S. MAKE SURE TO ADD EVERY NEW THING YOU INCLUDE IN THE "BEE.H" HERE OTHERWISE THE CODE WON'T WORK
