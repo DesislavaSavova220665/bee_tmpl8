@@ -24,7 +24,7 @@ namespace Tmpl8
 
 		void SpawnRandomly(int screenWidth, int screenHeight);
 
-		void interactWithBee(const Bee& bee, int screenWidth, int screenHeight);
+		void interactWithBee(Bee& bee, int screenWidth, int screenHeight);
 
 		//Method to draw the flower
 		void draw(Surface* screen);

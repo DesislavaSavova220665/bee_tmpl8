@@ -31,7 +31,10 @@ namespace Tmpl8
 		void move(int dirX, int dirY,int screenHeight, int screenWidth);
 
 		//Method to draw the bee
-		void Bee::draw(Surface* screen);
+		void draw(Surface* screen);
+
+		//Method to increase the score when the bee collects the flower
+		void addScore();
 
 
 		// Method to get the Bee's current position
@@ -68,6 +71,8 @@ namespace Tmpl8
 			// If the assertion passes, set the new width
 			width = newWidth;
 		}
+		int score;
+
 	private:
 		Point position;  // Current position of the Bee
 		Sprite* beeSprite;

@@ -33,7 +33,9 @@ namespace Tmpl8
 
 	}
 
-    void Flower::interactWithBee(const Bee& bee, int screenWidth, int screenHeight) {
+    void Flower::interactWithBee(Bee& bee, int screenWidth, int screenHeight)
+	{
+
         // distance between bee and flower
         float dx = bee.getPosition().x - position.x;
         float dy = bee.getPosition().y - position.y;
@@ -47,6 +49,7 @@ namespace Tmpl8
             // Generate new random coordinates for the flower
             float newRandomX = static_cast<float>(rand() % screenWidth);
             float newRandomY = static_cast<float>(rand() % screenHeight);
+
 
             // Manually enforcing screen bounds by ensuring new flower coordinates remain within the screen
             if (newRandomX < 0) {
@@ -65,6 +68,9 @@ namespace Tmpl8
 
             // Set the flower's position to the new random coordinates within the screen bounds
             setPosition(newRandomX, newRandomY);
+
+            bee.addScore();
+            std::cout << bee.score << std::endl;
         }
     }
 }

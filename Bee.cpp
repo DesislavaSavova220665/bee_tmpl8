@@ -11,6 +11,7 @@ namespace Tmpl8
 		position.x = 500;
 		position.y = 200;
 		beeSprite = new Sprite(new Surface("assets/beasset.png"), 1);
+		score = 0;
 	}
 
 	void Bee::move(int dirX, int dirY, int screenHeight, int screenWidth)
@@ -48,5 +49,10 @@ namespace Tmpl8
 	void Bee::draw(Surface* screen)
 	{
 		beeSprite->DrawScaled(position.x, position.y, width, height, screen);
+	}
+
+	void Bee::addScore()
+	{
+		score = score + 1;
 	}
 }

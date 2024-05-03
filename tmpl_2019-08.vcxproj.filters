@@ -12,7 +12,6 @@
     <ClCompile Include="Flower.cpp" />
     <ClCompile Include="RareFlower.cpp" />
     <ClCompile Include="timer.cpp" />
-    <ClCompile Include="screen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
@@ -26,7 +25,6 @@
     <ClInclude Include="flower.h" />
     <ClInclude Include="RareFlower.h" />
     <ClInclude Include="timer.h" />
-    <ClInclude Include="screen.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="template code">
