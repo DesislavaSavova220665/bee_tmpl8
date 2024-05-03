@@ -29,6 +29,7 @@ private:
 	Bee bee;
 	Flower flower;
 	Timer timer;
+	Sprite* ScreenBackground;
 
 	int collectedRegularFlowers = 0;
 	int collectedRareFlowers = 0;
