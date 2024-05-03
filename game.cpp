@@ -66,15 +66,16 @@ namespace Tmpl8
 
 		auto t = std::to_string(timer.getRemainingTime());
 
-		screen->Print((char*)t.c_str(), 720, 15, 0x00ff0000);
+		
 		//screen->Print((char*)t.c_str(), 0,0, 0x00ffffff);
 		if (timer.hasExpired()) {
 			// Handle game over scenario when the timer has run out
 			screen->Print("Time's up! Game Over!", screen->GetWidth() / 2 -50, screen->GetHeight() / 2, 0x00ff0000);
 			 // This will terminate the program; you can use other actions such as stopping the loop
 			return;
-		}
 
+		}
+		screen->Print((char*)t.c_str(), 720, 15, 0x00ff0000);
 	   // Move the bee with the adjusted position P.S. MAKE SURE TO ADD EVERY NEW THING YOU INCLUDE IN THE "BEE.H" HERE OTHERWISE THE CODE WON'T WORK
 		bee.move(directionX, directionY, screen->GetHeight(), screen->GetWidth());
 		flower.interactWithBee(bee, screen->GetWidth(), screen->GetHeight());
