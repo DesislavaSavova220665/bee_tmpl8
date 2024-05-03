@@ -64,21 +64,21 @@ namespace Tmpl8
 			directionY = 1;
 		}
 
-		auto t = std::to_string(timer.getRemainingTime());
+		auto remainingTime = std::to_string(timer.getRemainingTime());
 
-		
-		//screen->Print((char*)t.c_str(), 0,0, 0x00ffffff);
 		if (timer.hasExpired()) {
 			screen->Print("Time's up! Game Over!", screen->GetWidth() / 2 -50, screen->GetHeight() / 2, 0x00ff0000);
 			return;//terminating the program. everything after return; will not be executed.
 		}
-		screen->Print((char*)t.c_str(), 720, 15, 0x00ff0000);
+		screen->Print((char*)remainingTime.c_str(), 720, 15, 0x00ff0000);
 	   // Move the bee with the adjusted position P.S. MAKE SURE TO ADD EVERY NEW THING YOU INCLUDE IN THE "BEE.H" HERE OTHERWISE THE CODE WON'T WORK
 		bee.move(directionX, directionY, screen->GetHeight(), screen->GetWidth());
 		flower.interactWithBee(bee, screen->GetWidth(), screen->GetHeight());
 		bee.draw(screen);
 		flower.draw(screen);
 
+		auto addedScore = std::to_string(bee.score);
+		screen->Print((char*)addedScore.c_str(), 700,15, 0x00ffffff);
 		//score += collectFlowers(bee, flowers, collectedRegularFlowers, collectedRareFlowers, collectedVeryRareFlowers);
 
 	}
