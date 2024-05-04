@@ -100,7 +100,6 @@ namespace Tmpl8
 		screen->Print((char*)addedScore.c_str(), 60, 30, 0x00ffffff);
 
 		// Logic
-		// Move the bee with the adjusted position P.S. MAKE SURE TO ADD EVERY NEW THING YOU INCLUDE IN THE "BEE.H" HERE OTHERWISE THE CODE WON'T WORK
 		bee.move(directionX, directionY, screen->GetHeight(), screen->GetWidth());
 
 		for (int i = 0; i < NUM_FLOWERS; i++)

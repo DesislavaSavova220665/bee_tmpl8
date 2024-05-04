@@ -73,6 +73,7 @@ namespace Tmpl8
 		}
 		int score;
 
+
 	private:
 		Point position;  // Current position of the Bee
 		Sprite* beeSprite;

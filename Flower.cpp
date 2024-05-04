@@ -13,9 +13,7 @@ namespace Tmpl8
 		position.x = 0;
 		position.y = 0;
         flowerSprite = sprite;
-        
-
-		//flowerSprite = new Sprite(new Surface("assets/flowerasset.png"), 1);
+        //rareFlowerScore = 
        
 	}
 
