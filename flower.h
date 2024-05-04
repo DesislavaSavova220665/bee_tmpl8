@@ -20,7 +20,8 @@ namespace Tmpl8
 	{
 	public:
 
-		Flower();
+		Flower() = delete;
+		Flower(Sprite* sprite);
 
 		void SpawnRandomly(int screenWidth, int screenHeight);
 
@@ -28,10 +29,6 @@ namespace Tmpl8
 
 		//Method to draw the flower
 		void draw(Surface* screen);
-
-		void interactWithBee(const Bee& bee);
-
-		bool shouldDisappear() const;
 
 		Point getPosition() const { return position; }
 

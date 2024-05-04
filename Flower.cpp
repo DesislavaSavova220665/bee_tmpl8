@@ -6,14 +6,17 @@
 namespace Tmpl8
 {
 
-	Flower::Flower()
+	Flower::Flower(Sprite* sprite)
 	{
-		m_width = 100;
-		m_height = 100;
+		m_width = 50;
+		m_height = 50;
 		position.x = 0;
 		position.y = 0;
+        flowerSprite = sprite;
+        
 
-		flowerSprite = new Sprite(new Surface("assets/flowerasset.png"), 1);
+		//flowerSprite = new Sprite(new Surface("assets/flowerasset.png"), 1);
+       
 	}
 
 
@@ -43,13 +46,20 @@ namespace Tmpl8
     }
 	void Flower::draw(Surface* screen)
 	{
-		// flowerSprite->DrawScaled(position.x, position.y, m_width, m_height, screen);
-		flowerSprite->Draw(screen, position.x, position.y);
+		flowerSprite->DrawScaled(position.x, position.y, m_width, m_height, screen);
+		//flowerSprite->Draw(screen, position.x, position.y);
 
 	}
 
     void Flower::interactWithBee(Bee& bee, int screenWidth, int screenHeight)
 	{
+        //centering the position of the bee from top left
+        float BeeCenterPositionX = bee.getPosition().x + (bee.getWidth() / 2);
+        float BeeCenterPositionY = bee.getPosition().y + (bee.getHeight() / 2);
+
+        //centering the position of the flower from top left
+        float FlowerCenterPositionY = position.y + (m_height / 2);
+        float FlowerCenterPositionX = position.x + (m_width / 2);
 
         // distance between bee and flower
         float dx = bee.getPosition().x - position.x;
