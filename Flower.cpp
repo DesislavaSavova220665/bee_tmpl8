@@ -62,12 +62,15 @@ namespace Tmpl8
         float FlowerCenterPositionX = position.x + (m_width / 2);
 
         // distance between bee and flower
-        float dx = bee.getPosition().x - position.x;
-        float dy = bee.getPosition().y - position.y;
+        float dx = BeeCenterPositionX - FlowerCenterPositionX;
+        float dy = BeeCenterPositionY - FlowerCenterPositionY;
         float distance = std::sqrt(dx * dx + dy * dy);
 
+        float BeeRadius = bee.getHeight() / 2;
+        float FlowerRadius = m_height / 2;
+
         // Define a distance threshold for interaction
-        float interactionDistance = 30.0f; // Adjust the distance as needed
+        float interactionDistance = BeeRadius + FlowerRadius - 10;
 
         // Check if the distance between the bee and the flower is within the interaction distance
         if (distance < interactionDistance) {

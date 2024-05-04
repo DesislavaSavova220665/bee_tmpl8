@@ -14,7 +14,7 @@ namespace Tmpl8
 	// -----------------------------------------------------------
 	void Game::Init()
 	{
-		bee.setPosition(200, 200);
+		bee.setPosition(200, 300);
 
 		auto flowerSprite = new Sprite(new Surface("assets/flowerasset.png"), 1);
 		auto rareFlowerSprite = new Sprite(new Surface("assets/pinkFlower.png"), 1);

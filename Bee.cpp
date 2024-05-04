@@ -6,10 +6,8 @@ namespace Tmpl8
 
 	Bee::Bee()
 	{
-		width = 100;
-		height = 100;
-		position.x = 500;
-		position.y = 200;
+		width = 70;
+		height = 70;
 		beeSprite = new Sprite(new Surface("assets/beasset.png"), 1);
 		score = 0;
 	}
