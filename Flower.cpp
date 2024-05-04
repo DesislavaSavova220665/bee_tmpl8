@@ -8,8 +8,8 @@ namespace Tmpl8
 
 	Flower::Flower(Sprite* sprite)
 	{
-		m_width = 50;
-		m_height = 50;
+		m_width = 25;
+		m_height = 25;
 		position.x = 0;
 		position.y = 0;
         flowerSprite = sprite;

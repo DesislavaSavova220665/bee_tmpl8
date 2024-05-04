@@ -23,7 +23,7 @@ namespace Tmpl8
 		float newBeeX = beeX + dirX * moveSpeed;
 		float newBeeY = beeY + dirY * moveSpeed;
 
-		// Check and adjust the new position to prevent crossing the top and bottom borders
+		//adjusting the new position to prevent crossing the top and bottom borders
 		if (newBeeY < 0) {
 			newBeeY = 0; // Prevent crossing the top border
 		}
