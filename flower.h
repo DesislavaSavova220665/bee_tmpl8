@@ -6,9 +6,6 @@
 
 namespace Tmpl8
 {
-	const int NUM_FLOWERS = 5;
-	const int NUM_OBSTACLES = 3;
-	const int TIME_LIMIT = 15;  // Time limit in seconds
 
 	// Flower types and their corresponding point values
 	enum FlowerType {

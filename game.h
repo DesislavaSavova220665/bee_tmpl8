@@ -7,7 +7,10 @@
 
 namespace Tmpl8 {
 
+	constexpr int NUM_FLOWERS = 100;
+
 class Surface;
+
 class Game
 {
 public:
@@ -31,6 +34,7 @@ private:
 	Flower* flower2;
 	Flower* rareFlower;
 	Flower* rareFlower2;
+	Flower* manyFlowers[NUM_FLOWERS];
 	Timer timer;
 	Sprite* ScreenBackground;
 	Sprite* GameOver;

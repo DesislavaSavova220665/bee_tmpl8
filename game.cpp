@@ -24,6 +24,13 @@ namespace Tmpl8
 		rareFlower = new Flower(rareFlowerSprite);
 		rareFlower2 = new Flower(rareFlower2Sprite);
 
+		for (int i = 0; i < NUM_FLOWERS; i++)
+		{
+			manyFlowers[i] = new Flower(flowerSprite);
+			manyFlowers[i]->SpawnRandomly(screen->GetWidth(), screen->GetHeight());
+		}
+
+
 		flower->SpawnRandomly(screen->GetWidth(), screen->GetHeight());
 		flower2->SpawnRandomly(screen->GetWidth(), screen->GetHeight());
 		rareFlower->SpawnRandomly(screen->GetWidth(), screen->GetHeight());
@@ -100,12 +107,23 @@ namespace Tmpl8
 		rareFlower->interactWithBee(bee, screen->GetWidth(), screen->GetHeight());
 		rareFlower2->interactWithBee(bee, screen->GetWidth(), screen->GetHeight());
 
+		for (int i = 0; i < NUM_FLOWERS; i++)
+		{
+			manyFlowers[i]->interactWithBee(bee, screen->GetWidth(), screen->GetHeight());
+		}
+
+
 		//Drawing
 		bee.draw(screen);
 		flower->draw(screen);
 		flower2->draw(screen);
 		rareFlower->draw(screen);
 		rareFlower2->draw(screen);
+
+		for (int i = 0; i < NUM_FLOWERS; i++)
+		{
+			manyFlowers[i]->draw(screen);
+		}
 		//score += collectFlowers(bee, flowers, collectedRegularFlowers, collectedRareFlowers, collectedVeryRareFlowers);
 
 	}
