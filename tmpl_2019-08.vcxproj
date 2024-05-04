@@ -225,7 +225,6 @@
     <ClCompile Include="Bee.cpp" />
     <ClCompile Include="Flower.cpp" />
     <ClCompile Include="game.cpp" />
-    <ClCompile Include="RareFlower.cpp" />
     <ClCompile Include="surface.cpp" />
     <ClCompile Include="template.cpp" />
     <ClCompile Include="timer.cpp" />
@@ -234,7 +233,6 @@
     <ClInclude Include="Bee.h" />
     <ClInclude Include="flower.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="RareFlower.h" />
     <ClInclude Include="surface.h" />
     <ClInclude Include="template.h" />
     <ClInclude Include="timer.h" />

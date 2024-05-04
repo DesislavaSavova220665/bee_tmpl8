@@ -4,6 +4,7 @@
 namespace Tmpl8
 {
 
+	//constructor
 	Bee::Bee()
 	{
 		width = 70;
@@ -12,6 +13,7 @@ namespace Tmpl8
 		score = 0;
 	}
 
+	//method to make the bee move
 	void Bee::move(int dirX, int dirY, int screenHeight, int screenWidth)
 	{
 
@@ -44,11 +46,13 @@ namespace Tmpl8
 		position.y = newBeeY;
 	}
 
+	//draw
 	void Bee::draw(Surface* screen)
 	{
 		beeSprite->DrawScaled(position.x, position.y, width, height, screen);
 	}
 
+	//adding score
 	void Bee::addScore()
 	{
 		score = score + 1;

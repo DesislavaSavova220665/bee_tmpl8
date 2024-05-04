@@ -30,20 +30,10 @@ private:
 
 	// Initialize the Bee and flowers at starting position (0, 0)
 	Bee bee;
-	Flower* flower;
-	Flower* flower2;
-	Flower* rareFlower;
-	Flower* rareFlower2;
 	Flower* manyFlowers[NUM_FLOWERS];
 	Timer timer;
 	Sprite* ScreenBackground;
 	Sprite* GameOver;
-
-
-	int collectedRegularFlowers = 0;
-	int collectedRareFlowers = 0;
-	int collectedVeryRareFlowers = 0;
-	int score = 0;  // Player's total score
 };
 
 }; // namespace Tmpl8
