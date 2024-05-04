@@ -28,8 +28,11 @@ private:
 	// Initialize the Bee and flowers at starting position (0, 0)
 	Bee bee;
 	Flower flower;
+	Flower flower2;
 	Timer timer;
 	Sprite* ScreenBackground;
+	Sprite* GameOver;
+
 
 	int collectedRegularFlowers = 0;
 	int collectedRareFlowers = 0;

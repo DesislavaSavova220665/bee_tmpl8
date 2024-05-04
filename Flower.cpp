@@ -17,15 +17,30 @@ namespace Tmpl8
 	}
 
 
-	void Flower::SpawnRandomly(int screenWidth, int screenHeight)
-	{
-		float randomX = static_cast<float>(rand() % screenWidth);
-		float randomY = static_cast<float>(rand() % screenHeight);
+    void Flower::SpawnRandomly(int screenWidth, int screenHeight)
+    {
+        float randomX = static_cast<float>(rand() % screenWidth);
+        float randomY = static_cast<float>(rand() % screenHeight);
 
-		position.x = randomX;
-		position.y = randomY;
-	}
+        // Manually enforcing screen bounds by ensuring new flower coordinates remain within the screen
+        if (randomX < 0) {
+            randomX = 0;
+        }
+        else if (randomX > screenWidth - m_width) {
+            randomX = screenWidth - m_width;
+        }
 
+        if (randomY < 0) {
+            randomY = 0;
+        }
+        else if (randomY > screenHeight - m_height) {
+            randomY = screenHeight - m_height; // Ensure y doesn't go off the bottom side
+        }
+    
+        position.x = randomX;
+        position.y = randomY;
+
+    }
 	void Flower::draw(Surface* screen)
 	{
 		// flowerSprite->DrawScaled(position.x, position.y, m_width, m_height, screen);
@@ -46,28 +61,8 @@ namespace Tmpl8
 
         // Check if the distance between the bee and the flower is within the interaction distance
         if (distance < interactionDistance) {
-            // Generate new random coordinates for the flower
-            float newRandomX = static_cast<float>(rand() % screenWidth);
-            float newRandomY = static_cast<float>(rand() % screenHeight);
 
-
-            // Manually enforcing screen bounds by ensuring new flower coordinates remain within the screen
-            if (newRandomX < 0) {
-                newRandomX = 0;
-            } 
-            else if (newRandomX > screenWidth - m_width) {
-                newRandomX = screenWidth - m_width; 
-            }
-
-            if (newRandomY < 0) {
-                newRandomY = 0;
-            }
-            else if (newRandomY > screenHeight - m_height) {
-                newRandomY = screenHeight - m_height; // Ensure y doesn't go off the bottom side
-            }
-
-            // Set the flower's position to the new random coordinates within the screen bounds
-            setPosition(newRandomX, newRandomY);
+            SpawnRandomly(screenWidth, screenHeight);
 
             bee.addScore();
             std::cout << bee.score << std::endl;
