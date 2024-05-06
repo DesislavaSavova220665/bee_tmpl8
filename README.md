@@ -25,7 +25,7 @@ Daisy is a simple C++ game about collecting flowers with limited time. In the ga
 
 - Requirements
  - C++ compiler
- - Template from C++ Fast Track for Games Programming: 
+ - Template from C++ Fast Track for Games Programming: https://www.3dgep.com
 
 ---
 
