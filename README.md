@@ -34,7 +34,7 @@ It is simple without levels and only for the entertainng of collecting flowers!
  It is based on the game "B-A-B2" on itch.io: https://palmpixel.itch.io/bee2 , but simplified version made from the hands of a C++ beginner!
 
  I am planning to make more  big updates after the intake, because i have a time limit here and i am a slow learner!!!
-I hope you enjoy the game and feel free to give me any critical opinion about the code.
+I hope you enjoy the game and feel free to give me any critical opinion about the code, structure of it and logic!
 ### !IMPORTANT!
 
 --- 
