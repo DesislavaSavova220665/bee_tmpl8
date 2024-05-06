@@ -27,6 +27,8 @@ Daisy is a simple C++ game about collecting flowers with limited time. In the ga
  - C++ compiler
  - Template from C++ Fast Track for Games Programming: 
 
+---
+
 ### !IMPORTANT!
 It is simple without levels and only for the entertainng of collecting flowers!
  It is based on the game "B-A-B2" on itch.io: https://palmpixel.itch.io/bee2 , but simplified version made from the hands of a C++ beginner!
