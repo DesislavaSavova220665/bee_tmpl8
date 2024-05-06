@@ -5,27 +5,27 @@ Daisy is a simple C++ game about collecting flowers with limited time. In the ga
 ---
 
 ### What it looks like?
--i will put a gif. 
+- i will put a gif. 
 
 ### This game has multiple states
 
--Main Menu State - Displays main menu
--Game Play State - The actual game play
--Game Over State - Displays game over screen
+- Main Menu State - Displays main menu
+- Game Play State - The actual game play
+- Game Over State - Displays game over screen
 
 
 ### Features
 
--The bee can be controlled with arrow keys
--The flowers gets randomly placed
--The bee can collect the flowers
--Each flower increase bee score by 1 point
+- The bee can be controlled with arrow keys
+- The flowers gets randomly placed
+- The bee can collect the flowers
+- Each flower increase bee score by 1 point
 
 ### Build Instructions
 
--Requirements
- -C++ compiler
- -Template from C++ Fast Track for Games Programming: 
+- Requirements
+ - C++ compiler
+ - Template from C++ Fast Track for Games Programming: 
 
 !IMPORTANT!
 It is simple without levels and only for the entertainng of collecting flowers!
