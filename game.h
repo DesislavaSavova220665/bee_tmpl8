@@ -27,8 +27,6 @@ public:
 	void KeyDown( int key ) { /* implement if you want to handle keys */ }
 private:
 	Surface* screen;
-
-	// Initialize the Bee and flowers at starting position (0, 0)
 	Bee bee;
 	Flower* manyFlowers[NUM_FLOWERS];
 	Timer timer;

@@ -10,27 +10,34 @@ namespace Tmpl8
 {
 	void Game::Init()
 	{
+
+		//setting the position pf the bee
 		bee.setPosition(200, 300);
 
+		//adding the sprites of the 3 flower types
 		auto flowerSprite = new Sprite(new Surface("assets/flowerasset.png"), 1);
 		auto rareFlowerSprite = new Sprite(new Surface("assets/pinkFlower.png"), 1);
 		auto rareFlower2Sprite = new Sprite(new Surface("assets/greenFlower.png"), 1);
 
+		//maing one global code so it is more clear and less messy with logic for all 3 types of flowers with arrays "for" loop
 		for (int i = 0; i < NUM_FLOWERS; i++)
 		{
-			if(rand() % 100 < 5)
+			if (rand() % 100 < 5)//modulo
 			{
 				manyFlowers[i] = new Flower(rareFlowerSprite);
+				manyFlowers[i]->setScale(50);
 
 			}
-			else if(rand()%100 < 10) //modulo
+			else if (rand() % 100 < 10) //modulo
 			{
 				manyFlowers[i] = new Flower(rareFlower2Sprite);
+				manyFlowers[i]->setScale(30);
 			}
 
 			else
 			{
 				manyFlowers[i] = new Flower(flowerSprite);
+				//manyFlowers[i]->setScale(25);
 			}
 
 
@@ -38,16 +45,16 @@ namespace Tmpl8
 			manyFlowers[i]->SpawnRandomly(screen->GetWidth(), screen->GetHeight());
 		}
 
-
+		//making the timer and adding the background with "game over" sprites
 		timer.start(15.0f);
 		ScreenBackground = new Sprite(new Surface("assets/grass.jpg"), 1);
 		GameOver = new Sprite(new Surface("assets/gameover.png"), 1);
 	}
 
-	
+
 	void Game::Shutdown()
 	{
-		
+		// if i have time i will do this one also
 	}
 
 
@@ -58,10 +65,11 @@ namespace Tmpl8
 
 		// clear the graphics window
 		screen->Clear(0);
-		ScreenBackground->DrawScaled(0, 0, screen->GetWidth(),screen->GetHeight(), screen);
-		
+		//drawing the background
+		ScreenBackground->DrawScaled(0, 0, screen->GetWidth(), screen->GetHeight(), screen);
 
-		int directionX = 0, directionY = 0;
+
+		float directionX = 0, directionY = 0;
 		if (GetAsyncKeyState(VK_LEFT))
 		{
 			directionX = -1;
@@ -82,13 +90,21 @@ namespace Tmpl8
 			directionY = 1;
 		}
 
+		if (abs(directionX) + abs(directionY) > 1)
+		{
+			float scalar = sqrt(directionX * directionX + directionY * directionY);
+			directionX = scalar/ directionX;
+			directionY = scalar/ directionY;
+		}
+
+		//adding the score and the remaining time 
 		auto addedScore = std::to_string(bee.score);
 		auto remainingTime = std::to_string(timer.getRemainingTime());
 
+		//logic of the end screen
 		if (timer.hasExpired()) {
-			//screen->Print("Time's up! Game Over!", screen->GetWidth() / 2 -50, screen->GetHeight() / 2, 0x00ff0000);
 			GameOver->DrawScaled(150, 25, 500, 500, screen);
-			screen->Print((char*)addedScore.c_str(), screen->GetWidth() / 2, screen->GetHeight() / 2 + 50, 0x00ffffff);
+			screen->Print((char*)addedScore.c_str(), screen->GetWidth() / 2, screen->GetHeight() / 2 + 150, 0x00ffffff);
 			return;//terminating the program. everything after return; will not be executed.
 		}
 

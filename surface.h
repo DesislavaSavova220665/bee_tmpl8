@@ -2,6 +2,7 @@
 // IGAD/BUAS(NHTV)/UU - Jacco Bikker - 2006-2020
 
 #pragma once
+#include <xstring>
 
 namespace Tmpl8 {
 
@@ -42,6 +43,7 @@ public:
 	Surface( int a_Width, int a_Height, Pixel* a_Buffer, int a_Pitch );
 	Surface( int a_Width, int a_Height );
 	Surface( char* a_File );
+	Surface();
 	~Surface();
 	// member data access
 	Pixel* GetBuffer() { return m_Buffer; }
@@ -65,6 +67,12 @@ public:
 	void Box( int x1, int y1, int x2, int y2, Pixel color );
 	void Bar( int x1, int y1, int x2, int y2, Pixel color );
 	void Resize( Surface* a_Orig );
+	void Load(std::string::const_pointer c_str);
+	float getWidth();
+	float getHeight();
+	void Copy(const Surface& surface, int i, int i1);
+	void Draw(Surface* screen, float button_x, float button_y);
+
 private:
 	// Attributes
 	Pixel* m_Buffer{nullptr};	

@@ -10,13 +10,13 @@ namespace Tmpl8 {
 
         Timer();
 
-        // Method to start the timer
+        //method to start the timer
         void start(float durationInSeconds);
 
-        // Method to check if the timer has expired
+        //method to check if the timer has expired
         bool hasExpired() const;
 
-        // Method to get the remaining time (in seconds)
+        //method to get the remaining time (in seconds)
         float getRemainingTime() const;
 
     private:

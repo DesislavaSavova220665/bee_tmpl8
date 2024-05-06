@@ -2,11 +2,13 @@
 
 namespace Tmpl8 {
 
+    //constuctor
     Timer::Timer()
     {
 	    
     }
 
+    //method to show how to start the timer
     void Timer::start(float durationInSeconds)
     {
         duration = durationInSeconds;
@@ -16,6 +18,7 @@ namespace Tmpl8 {
         startTime = std::chrono::steady_clock::now();
     }
 
+    //method to show how the timer expires after a certain amount of time
     bool Timer::hasExpired() const
     {
         auto elapsed = std::chrono::steady_clock::now() - startTime;
@@ -23,6 +26,7 @@ namespace Tmpl8 {
         return elapsedSeconds >= duration;
     }
 
+    //method to show how to get the remaining time
     float Timer::getRemainingTime() const {
 
         auto elapsed = std::chrono::steady_clock::now() - startTime;
