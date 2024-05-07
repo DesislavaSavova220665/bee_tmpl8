@@ -45,8 +45,7 @@ namespace Tmpl8
 			manyFlowers[i]->SpawnRandomly(screen->GetWidth(), screen->GetHeight());
 		}
 
-		//making the timer and adding the background with "game over" sprites
-		timer.start(15.0f);
+		//adding the background with "game over" sprites
 		ScreenBackground = new Sprite(new Surface("assets/grass.jpg"), 1);
 		GameOver = new Sprite(new Surface("assets/gameover.png"), 1);
 	}
@@ -60,13 +59,24 @@ namespace Tmpl8
 
 	void Game::Tick(float deltaTime)
 	{
-
-
-
 		// clear the graphics window
 		screen->Clear(0);
 		//drawing the background
 		ScreenBackground->DrawScaled(0, 0, screen->GetWidth(), screen->GetHeight(), screen);
+
+		if (IsInMainMenu)
+		{
+			MainMenu = new Sprite(new Surface("assets/Daisy_Logo.png"), 1);
+			MainMenu->DrawScaled(140, 80, 500, 300, screen);
+			screen->Print("Press SPACE to start the game!!!", 230, 370, 0);
+			if (GetAsyncKeyState( VK_SPACE))
+			{
+				timer.start(15.0f);
+				IsInMainMenu = false;
+			}
+			return;//everything after return will be executed.
+		}
+
 
 
 		float directionX = 0, directionY = 0;
@@ -90,6 +100,7 @@ namespace Tmpl8
 			directionY = 1;
 		}
 
+		// Bug: This doesn't work as expected because i tried to calculate how fast it goes diagonal and what is the distance between x and y vector(i cannot realy explain what i am doing i just know i made a mistake and now i dont see a difference...)
 		if (abs(directionX) + abs(directionY) > 1)
 		{
 			float scalar = sqrt(directionX * directionX + directionY * directionY);
@@ -105,15 +116,15 @@ namespace Tmpl8
 		if (timer.hasExpired()) {
 			GameOver->DrawScaled(150, 25, 500, 500, screen);
 			screen->Print((char*)addedScore.c_str(), screen->GetWidth() / 2, screen->GetHeight() / 2 + 150, 0x00ffffff);
-			return;//terminating the program. everything after return; will not be executed.
+			return;//everything after return; will not be executed.
 		}
 
 
 		// Drawing text
 		screen->Print("Remaining Time:", 20, 20, 0);
-		screen->Print((char*)remainingTime.c_str(), 115, 20, 0x00ff0000);
-		screen->Print("SCORE:", 20, 30, 0);
-		screen->Print((char*)addedScore.c_str(), 60, 30, 0x00ffffff);
+		screen->Print((char*)remainingTime.c_str(), 160, 20, 0x00ff0000);
+		screen->Print("SCORE:", 20, 40, 0);
+		screen->Print((char*)addedScore.c_str(), 90, 40, 0x00ffffff);
 
 		// Logic
 		bee.move(directionX, directionY, screen->GetHeight(), screen->GetWidth());

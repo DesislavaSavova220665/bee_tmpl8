@@ -72,6 +72,9 @@ public:
 	float getHeight();
 	void Copy(const Surface& surface, int i, int i1);
 	void Draw(Surface* screen, float button_x, float button_y);
+	int GetMouseState();
+	int GetMouseY();
+	int GetMouseX();
 
 private:
 	// Attributes

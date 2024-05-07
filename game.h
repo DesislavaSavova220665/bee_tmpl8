@@ -32,6 +32,8 @@ private:
 	Timer timer;
 	Sprite* ScreenBackground;
 	Sprite* GameOver;
+	Sprite* MainMenu;
+	bool IsInMainMenu = true; 
 };
 
 }; // namespace Tmpl8
