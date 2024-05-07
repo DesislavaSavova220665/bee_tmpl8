@@ -34,7 +34,7 @@ namespace Tmpl8
 		void draw(Surface* screen);
 
 		//method to increase the score when the bee collects the flower
-		void addScore();
+		void addScore(int amount);
 
 
 		//method to get the Bee's current position

@@ -13,7 +13,6 @@ namespace Tmpl8
 		position.x = 0;
 		position.y = 0;
 		flowerSprite = sprite;
-		//rareFlowerScore = 
 
 	}
 
@@ -93,7 +92,7 @@ namespace Tmpl8
 
 			SpawnRandomly(screenWidth, screenHeight);
 
-			bee.addScore();
+			bee.addScore(points);
 			std::cout << bee.score << std::endl;
 
 		}

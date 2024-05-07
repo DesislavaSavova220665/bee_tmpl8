@@ -26,18 +26,22 @@ namespace Tmpl8
 			{
 				manyFlowers[i] = new Flower(rareFlowerSprite);
 				manyFlowers[i]->setScale(50);
+				manyFlowers[i]->points = 2;
 
 			}
 			else if (rand() % 100 < 10) //modulo
 			{
 				manyFlowers[i] = new Flower(rareFlower2Sprite);
-				manyFlowers[i]->setScale(30);
+				manyFlowers[i]->setScale(35);
+				manyFlowers[i]->points = 3;
+
 			}
 
 			else
 			{
 				manyFlowers[i] = new Flower(flowerSprite);
 				//manyFlowers[i]->setScale(25);
+				manyFlowers[i]->points = 1;
 			}
 
 
@@ -48,6 +52,7 @@ namespace Tmpl8
 		//adding the background with "game over" sprites
 		ScreenBackground = new Sprite(new Surface("assets/grass.jpg"), 1);
 		GameOver = new Sprite(new Surface("assets/gameover.png"), 1);
+		MainMenu = new Sprite(new Surface("assets/PurpleDaisyLogo.png"), 1);
 	}
 
 
@@ -64,11 +69,12 @@ namespace Tmpl8
 		//drawing the background
 		ScreenBackground->DrawScaled(0, 0, screen->GetWidth(), screen->GetHeight(), screen);
 
+		//main menu creation and logic
 		if (IsInMainMenu)
 		{
-			MainMenu = new Sprite(new Surface("assets/Daisy_Logo.png"), 1);
 			MainMenu->DrawScaled(140, 80, 500, 300, screen);
-			screen->Print("Press SPACE to start the game!!!", 230, 370, 0);
+			screen->Print("Press SPACE to start the game!!!", 230, 380, 0);
+
 			if (GetAsyncKeyState( VK_SPACE))
 			{
 				timer.start(15.0f);
@@ -78,23 +84,27 @@ namespace Tmpl8
 		}
 
 
-
+		//controls for the bee
+		//left arrow
 		float directionX = 0, directionY = 0;
 		if (GetAsyncKeyState(VK_LEFT))
 		{
 			directionX = -1;
 		}
 
+		//right arrow
 		if (GetAsyncKeyState(VK_RIGHT))
 		{
 			directionX = 1;
 		}
 
+		//UP arrow
 		if (GetAsyncKeyState(VK_UP))
 		{
 			directionY = -1;
 		}
 
+		//DOWN arrow
 		if (GetAsyncKeyState(VK_DOWN))
 		{
 			directionY = 1;
@@ -116,13 +126,18 @@ namespace Tmpl8
 		if (timer.hasExpired()) {
 			GameOver->DrawScaled(150, 25, 500, 500, screen);
 			screen->Print((char*)addedScore.c_str(), screen->GetWidth() / 2, screen->GetHeight() / 2 + 150, 0x00ffffff);
+
+			if (GetAsyncKeyState(VK_SPACE))
+			{
+				IsInMainMenu = true;
+			}
 			return;//everything after return; will not be executed.
 		}
 
 
 		// Drawing text
 		screen->Print("Remaining Time:", 20, 20, 0);
-		screen->Print((char*)remainingTime.c_str(), 160, 20, 0x00ff0000);
+		screen->Print((char*)remainingTime.c_str(), 190, 20, 0x00ff0000);
 		screen->Print("SCORE:", 20, 40, 0);
 		screen->Print((char*)addedScore.c_str(), 90, 40, 0x00ffffff);
 

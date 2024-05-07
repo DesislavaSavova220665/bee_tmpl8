@@ -108,7 +108,7 @@ namespace Tmpl8 {
 		}
 
 		Pixel* t = m_Buffer + x1 + y1 * m_Pitch;
-		for (int i = 0; i < (int)(strlen(a_String)); i++, t += 5 + 2 * scale)
+		for (int i = 0; i < (int)(strlen(a_String)); i++, t += 5 + 3 * scale)
 		{
 			long pos = 0;
 			if ((a_String[i] >= 'A') && (a_String[i] <= 'Z'))

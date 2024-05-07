@@ -40,6 +40,7 @@ namespace Tmpl8
 		void setPosX(float x) { position.x = x; }
 		void setPosY(float y) { position.y = y; }
 		void setScale(int scale) { m_height = scale; m_width = scale; }
+		int points;
 	private:
 		//private members
 		Point position;

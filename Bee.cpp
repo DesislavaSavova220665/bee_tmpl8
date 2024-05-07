@@ -53,8 +53,8 @@ namespace Tmpl8
 	}
 
 	//adding score
-	void Bee::addScore()
+	void Bee::addScore(int amount)
 	{
-		score = score + 1;
+		score = score + amount;
 	}
 }
