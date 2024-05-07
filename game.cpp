@@ -75,11 +75,18 @@ namespace Tmpl8
 			MainMenu->DrawScaled(140, 80, 500, 300, screen);
 			screen->Print("Press SPACE to start the game!!!", 230, 380, 0);
 
-			if (GetAsyncKeyState( VK_SPACE))
+			if (GetAsyncKeyState( VK_SPACE) < 0)
 			{
-				timer.start(15.0f);
-				IsInMainMenu = false;
+
+				if (!previousSpaceState) 
+				{
+					previousSpaceState = true;
+					timer.start(15.0f);
+					IsInMainMenu = false;
+				}
 			}
+			else previousSpaceState = false;
+
 			return;//everything after return will be executed.
 		}
 
@@ -127,11 +134,16 @@ namespace Tmpl8
 			GameOver->DrawScaled(150, 25, 500, 500, screen);
 			screen->Print((char*)addedScore.c_str(), screen->GetWidth() / 2, screen->GetHeight() / 2 + 150, 0x00ffffff);
 
-			if (GetAsyncKeyState(VK_SPACE))
-			{
-				IsInMainMenu = true;
+			if (GetKeyState(VK_SPACE) < 0) 
+            {
+				if (!previousSpaceState) {
+					previousSpaceState = true;
+					//Key pressed
+					IsInMainMenu = true;
+				}
 			}
-			return;//everything after return; will not be executed.
+			else previousSpaceState = false;
+			return;//everything after return; will not be executed
 		}
 
 

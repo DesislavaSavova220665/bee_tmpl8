@@ -34,6 +34,7 @@ private:
 	Sprite* GameOver;
 	Sprite* MainMenu;
 	bool IsInMainMenu = true; 
+	bool previousSpaceState = false;
 };
 
 }; // namespace Tmpl8
