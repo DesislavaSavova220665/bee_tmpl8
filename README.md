@@ -21,10 +21,10 @@ Daisy is a simple C++ game about collecting flowers with limited time. In the ga
 - The bee can collect the flowers
 - Each flower increase bee score by 1 point
 
-### Build Instructions
+### Build
 
 - Requirements
- - C++ compiler
+ - C++ compiler 
  - Template from C++ Fast Track for Games Programming: https://www.3dgep.com
 
 ---
