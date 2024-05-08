@@ -52,7 +52,7 @@ namespace Tmpl8
 		//adding the background with "game over" sprites
 		ScreenBackground = new Sprite(new Surface("assets/grass.jpg"), 1);
 		GameOver = new Sprite(new Surface("assets/gameover.png"), 1);
-		MainMenu = new Sprite(new Surface("assets/PurpleDaisyLogo.png"), 1);
+		MainMenu = new Sprite(new Surface("assets/Daisy_Logo.png"), 1);
 	}
 
 
@@ -83,6 +83,7 @@ namespace Tmpl8
 					previousSpaceState = true;
 					timer.start(15.0f);
 					IsInMainMenu = false;
+					bee.score = 0;
 				}
 			}
 			else previousSpaceState = false;
