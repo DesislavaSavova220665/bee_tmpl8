@@ -107,6 +107,8 @@ namespace Tmpl8 {
 			fontInitialized = true;
 		}
 
+		// credits to Damian. he let me use this code to change the font size and i am realy thankful because i coudn't really understand it properly.
+		//https://github.com/TheDimin/AntDefence/blob/master/surface.cpp
 		Pixel* t = m_Buffer + x1 + y1 * m_Pitch;
 		for (int i = 0; i < (int)(strlen(a_String)); i++, t += 5 + 3 * scale)
 		{

@@ -19,6 +19,8 @@ namespace Tmpl8 {
         //method to get the remaining time (in seconds)
         float getRemainingTime() const;
 
+
+        //private members
     private:
         float duration;
         std::chrono::time_point<std::chrono::steady_clock> startTime;

@@ -5,10 +5,10 @@ namespace Tmpl8
 {
 
 	// Flower types and their corresponding point values
-	enum FlowerType {
-		REGULAR_FLOWER = 3,
-		RARE_FLOWER = 2
-	};
+	//enum FlowerType {
+	///	REGULAR_FLOWER = 3,
+	//	RARE_FLOWER = 2
+	//};
 
 	class Flower
 	{

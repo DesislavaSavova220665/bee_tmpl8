@@ -6,6 +6,7 @@
 namespace Tmpl8
 {
 
+	//constructor
 	Flower::Flower(Sprite* sprite)
 	{
 		m_width = 25;
@@ -16,7 +17,7 @@ namespace Tmpl8
 
 	}
 
-
+	//method to spawn the flowers randomly
 	void Flower::SpawnRandomly(int screenWidth, int screenHeight)
 	{
 		float randomX = static_cast<float>(rand() % screenWidth);
@@ -43,6 +44,8 @@ namespace Tmpl8
 		m_CurrentWidth = 0;
 		m_CurrentHeight = 0;
 	}
+
+	//draw function
 	void Flower::draw(Surface* screen)
 	{
 		if (m_CurrentWidth < m_width)
@@ -74,7 +77,7 @@ namespace Tmpl8
 		float FlowerCenterPositionY = position.y + (m_height / 2);
 		float FlowerCenterPositionX = position.x + (m_width / 2);
 
-		// distance between bee and flower
+		//distance between bee and flower
 		float dx = BeeCenterPositionX - FlowerCenterPositionX;
 		float dy = BeeCenterPositionY - FlowerCenterPositionY;
 		float distance = std::sqrt(dx * dx + dy * dy);
@@ -92,6 +95,7 @@ namespace Tmpl8
 
 			SpawnRandomly(screenWidth, screenHeight);
 
+			//adding the score 
 			bee.addScore(points);
 			std::cout << bee.score << std::endl;
 

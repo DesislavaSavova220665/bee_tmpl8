@@ -19,7 +19,8 @@ namespace Tmpl8
 		auto rareFlowerSprite = new Sprite(new Surface("assets/pinkFlower.png"), 1);
 		auto rareFlower2Sprite = new Sprite(new Surface("assets/greenFlower.png"), 1);
 
-		//maing one global code so it is more clear and less messy with logic for all 3 types of flowers with arrays "for" loop
+		//maing one global code so it is more clear and less messy with logic for all 3 types of flowers with arrays "for" loop.
+		//this for loop i call "the strainer" because it strains the amound of flowers that spwan around the grid.
 		for (int i = 0; i < NUM_FLOWERS; i++)
 		{
 			if (rand() % 100 < 5)//modulo
