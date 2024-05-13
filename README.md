@@ -5,7 +5,7 @@ Daisy is a simple C++ game about collecting flowers within limited time. In the 
 ---
 
 ### What it looks like?
-- i will put a gif. 
+- ![daisy](https://github.com/DesislavaSavova220665/bee_tmpl8/assets/112880388/14c7254f-f238-4d3d-a8d7-70e06cd96232)
 
 ### This game has multiple states
 
